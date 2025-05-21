@@ -1,0 +1,152 @@
+---
+const faqCategories = [
+  {
+    title: "Démarches administratives",
+    faqs: [
+      {
+        question: "Quels sont les documents nécessaires pour s'inscrire dans une université marocaine ?",
+        answer: "Les documents généralement requis sont : diplômes et relevés de notes légalisés, copie du passeport, extrait de naissance, photos d'identité et attestation de préinscription. La liste exacte peut varier selon l'établissement et le niveau d'études visé."
+      },
+      {
+        question: "Combien de temps faut-il pour obtenir un visa d'études pour le Maroc ?",
+        answer: "Le délai d'obtention d'un visa d'études pour le Maroc varie généralement de 2 à 4 semaines, selon votre pays d'origine et la période de demande. Il est recommandé d'initier les démarches au moins 2 mois avant la date prévue de départ."
+      },
+      {
+        question: "Comment obtenir une carte de séjour étudiant au Maroc ?",
+        answer: "Pour obtenir une carte de séjour, vous devez fournir : votre passeport, une attestation d'inscription universitaire, un justificatif de logement, un certificat médical et des photos d'identité. YuniGate vous accompagne dans toutes ces démarches pour faciliter l'obtention de ce document essentiel."
+      },
+      {
+        question: "Les étudiants étrangers peuvent-ils travailler au Maroc pendant leurs études ?",
+        answer: "Oui, les étudiants étrangers peuvent travailler au Maroc, mais ils doivent obtenir une autorisation de travail. Il existe également des restrictions sur le nombre d'heures de travail autorisées pendant la période d'études. YuniGate peut vous conseiller sur les démarches à suivre."
+      }
+    ]
+  },
+  {
+    title: "Études et universités",
+    faqs: [
+      {
+        question: "Quelles sont les meilleures universités privées au Maroc ?",
+        answer: "Le Maroc compte plusieurs excellentes universités privées, notamment l'Université Internationale de Rabat (UIR), l'Université Privée de Marrakech (UPM), l'Université Internationale de Casablanca (UIC), et l'Université Mohammed VI Polytechnique. Le choix dépendra de votre domaine d'études et de vos préférences personnelles."
+      },
+      {
+        question: "En quelles langues sont dispensés les cours dans les universités marocaines ?",
+        answer: "Dans les universités privées marocaines, les cours sont généralement dispensés en français et/ou en anglais, selon les programmes. Certains établissements proposent également des cours préparatoires linguistiques pour les étudiants non francophones."
+      },
+      {
+        question: "Les diplômes marocains sont-ils reconnus internationalement ?",
+        answer: "Oui, les diplômes délivrés par les universités marocaines accréditées sont reconnus internationalement, particulièrement dans les pays francophones et dans de nombreux pays africains et européens. Plusieurs établissements proposent également des doubles diplômes avec des universités étrangères."
+      },
+      {
+        question: "Quelles sont les filières d'études les plus demandées au Maroc ?",
+        answer: "Les filières les plus demandées incluent l'ingénierie, le management et commerce, la médecine et les sciences de la santé, l'informatique et les technologies de l'information, ainsi que les sciences juridiques et politiques. Le Maroc est particulièrement réputé pour ses formations en ingénierie et en management."
+      }
+    ]
+  },
+  {
+    title: "Logement et vie pratique",
+    faqs: [
+      {
+        question: "Quel est le coût moyen d'un logement étudiant au Maroc ?",
+        answer: "Le coût d'un logement étudiant varie selon la ville et le type de logement. En moyenne, comptez entre 200€ et 400€ par mois pour un studio, entre 150€ et 250€ pour une chambre en colocation, et entre 100€ et 200€ pour une chambre en résidence universitaire."
+      },
+      {
+        question: "Comment se déplacer dans les villes marocaines ?",
+        answer: "Les grandes villes marocaines disposent de différents moyens de transport public : tramway (Rabat, Casablanca), bus, petits taxis (pour les déplacements intra-urbains) et grands taxis (pour les trajets interurbains). Les applications de VTC comme Careem sont également disponibles dans les grandes villes."
+      },
+      {
+        question: "Quel est le coût de la vie pour un étudiant au Maroc ?",
+        answer: "Le coût de la vie mensuel pour un étudiant varie entre 400€ et 700€, selon la ville et le mode de vie. Cela inclut le logement, la nourriture, les transports et quelques loisirs. Les villes comme Casablanca et Rabat sont généralement plus coûteuses que Fès ou Marrakech."
+      },
+      {
+        question: "Les étudiants étrangers ont-ils accès à une assurance maladie au Maroc ?",
+        answer: "Il est fortement recommandé aux étudiants étrangers de souscrire à une assurance maladie privée. Certaines universités incluent une assurance dans leurs frais, mais il est important de vérifier la couverture. YuniGate peut vous conseiller sur les meilleures options d'assurance santé."
+      }
+    ]
+  },
+  {
+    title: "Services YuniGate",
+    faqs: [
+      {
+        question: "Quels sont les frais de vos services d'accompagnement ?",
+        answer: "Nos tarifs varient en fonction du niveau d'accompagnement souhaité. Nous proposons différentes formules adaptées à tous les budgets, de l'assistance ponctuelle au pack complet. Contactez-nous pour obtenir un devis personnalisé en fonction de vos besoins spécifiques."
+      },
+      {
+        question: "Combien de temps à l'avance dois-je commencer les démarches avec YuniGate ?",
+        answer: "Idéalement, nous recommandons de commencer les démarches 6 mois avant la date souhaitée de début des études, notamment pour les inscriptions en septembre. Cependant, nous pouvons également vous accompagner dans des délais plus courts, en fonction des calendriers universitaires."
+      },
+      {
+        question: "Proposez-vous des visites des campus universitaires ?",
+        answer: "Oui, nous organisons des visites virtuelles des campus pour les étudiants qui ne peuvent pas se déplacer avant leur arrivée. Pour ceux qui sont déjà au Maroc, nous pouvons organiser des visites physiques des établissements qui vous intéressent."
+      },
+      {
+        question: "Que se passe-t-il si ma candidature à l'université est refusée ?",
+        answer: "Si votre candidature est refusée par une université, nous vous proposons immédiatement d'autres options adaptées à votre profil. Notre taux d'acceptation est très élevé car nous pré-évaluons soigneusement les dossiers avant soumission, mais nous avons toujours des plans alternatifs pour assurer votre admission."
+      }
+    ]
+  }
+];
+---
+
+<section class="py-16 bg-white dark:bg-secondary-900">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="max-w-4xl mx-auto">
+      <div x-data="{ activeTab: 'Démarches administratives' }" class="mb-12">
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+          {faqCategories.map((category) => (
+            <button
+              @click={`activeTab = '${category.title}'`}
+              x-bind:class={`activeTab === '${category.title}' ? 'bg-primary-500 text-white' : 'bg-secondary-100 dark:bg-secondary-800 text-secondary-900 dark:text-white hover:bg-secondary-200 dark:hover:bg-secondary-700'`}
+              class="px-4 py-2 rounded-full text-sm font-medium transition-colors"
+            >
+              {category.title}
+            </button>
+          ))}
+        </div>
+        
+        {faqCategories.map((category) => (
+          <div x-show={`activeTab === '${category.title}'`} class="space-y-6">
+            {category.faqs.map((faq, faqIndex) => (
+              <div x-data="{ open: false }" class="border-b border-secondary-200 dark:border-secondary-700 pb-4">
+                <button
+                  @click="open = !open"
+                  class="w-full flex justify-between items-center text-left font-medium text-secondary-900 dark:text-white py-2 focus:outline-none"
+                >
+                  <span>{faq.question}</span>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    class="h-5 w-5 text-primary-500 transform transition-transform"
+                    x-bind:class="open ? 'rotate-180' : ''"
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div 
+                  x-show="open" 
+                  x-transition:enter="transition-all ease-out duration-300"
+                  x-transition:enter-start="opacity-0 max-h-0"
+                  x-transition:enter-end="opacity-100 max-h-96"
+                  x-transition:leave="transition-all ease-in duration-200"
+                  x-transition:leave-start="opacity-100 max-h-96"
+                  x-transition:leave-end="opacity-0 max-h-0"
+                  class="overflow-hidden text-secondary-700 dark:text-secondary-300 pt-2"
+                >
+                  <p>{faq.answer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+      
+      <div class="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-6 text-center">
+        <p class="text-secondary-800 dark:text-secondary-200 mb-4">Vous n'avez pas trouvé la réponse à votre question ?</p>
+        <a href="/contact" class="btn btn-primary">
+          Nous contacter
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

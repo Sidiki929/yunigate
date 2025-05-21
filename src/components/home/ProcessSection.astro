@@ -1,0 +1,70 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Consultation initiale",
+    description: "Discussion approfondie pour comprendre vos objectifs académiques et personnels."
+  },
+  {
+    number: "02",
+    title: "Choix de l'université",
+    description: "Sélection des établissements adaptés à votre profil et vos aspirations académiques."
+  },
+  {
+    number: "03",
+    title: "Dossier d'admission",
+    description: "Préparation et soumission de votre candidature auprès des universités sélectionnées."
+  },
+  {
+    number: "04",
+    title: "Préparation au voyage",
+    description: "Organisation du voyage, réservation des billets et planification de l'arrivée."
+  },
+  {
+    number: "05",
+    title: "Installation au Maroc",
+    description: "Accueil à l'aéroport et aide pour le logement et les formalités administratives."
+  },
+  {
+    number: "06",
+    title: "Suivi académique",
+    description: "Accompagnement continu tout au long de vos études pour assurer votre réussite."
+  }
+];
+---
+
+<section class="section bg-secondary-50 dark:bg-secondary-800">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="text-secondary-900 dark:text-white">Comment ça <span class="text-primary-500">fonctionne</span></h2>
+      <p>Notre processus simplifié pour vous accompagner du début à la fin de votre parcours.</p>
+    </div>
+    
+    <div class="relative">
+      <!-- Timeline connector -->
+      <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-primary-200 dark:bg-primary-900/30 transform -translate-x-1/2"></div>
+      
+      <div class="space-y-12 relative">
+        {steps.map((step, index) => (
+          <div class="md:grid md:grid-cols-2 md:gap-8 items-center" data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}>
+            <div class={`relative ${index % 2 === 0 ? 'md:text-right' : 'md:col-start-2'}`}>
+              <div class="mb-4 flex items-center gap-4 relative z-10 md:justify-center">
+                <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+                  <div class="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold">
+                    {index + 1}
+                  </div>
+                </div>
+                <span class="text-4xl font-bold text-primary-500 opacity-30">{step.number}</span>
+                <h3 class="text-xl font-bold text-secondary-900 dark:text-white">{step.title}</h3>
+              </div>
+              <p class="text-secondary-700 dark:text-secondary-300">{step.description}</p>
+            </div>
+            
+            <!-- This empty div maintains grid structure for alternating layout -->
+            <div class={index % 2 === 0 ? 'hidden md:block md:col-start-2' : 'hidden md:block md:col-start-1'}></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

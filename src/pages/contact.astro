@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/contact/ContactForm.astro';
+import ContactInfo from '../components/contact/ContactInfo.astro';
+---
+
+<Layout 
+  title="Contact" 
+  description="Contactez YuniGate pour démarrer votre projet d'études au Maroc. Notre équipe est disponible pour répondre à toutes vos questions."
+>
+  <section class="pt-32 pb-16 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="section-title">
+        <h1 class="text-secondary-900 dark:text-white"><span class="text-primary-500">Contactez</span>-nous</h1>
+        <p>Notre équipe est à votre disposition pour vous accompagner dans votre projet d'études au Maroc.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+        <ContactForm />
+        <ContactInfo />
+      </div>
+    </div>
+  </section>
+</Layout>

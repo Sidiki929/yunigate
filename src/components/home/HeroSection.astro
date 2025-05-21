@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 -z-10 opacity-30 dark:opacity-10">
+    <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white dark:bg-secondary-900 shadow-xl shadow-primary-500/10 ring-1 ring-primary-50 dark:ring-primary-900/10"></div>
+  </div>
+
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8 max-w-2xl">
+        <div class="space-y-4 animate-slideUp">
+          <span class="inline-block py-1 px-3 text-sm bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 rounded-full font-medium">
+            Accompagnement des étudiants africains
+          </span>
+          <h1 class="font-bold text-secondary-900 dark:text-white">
+            Votre passerelle vers l'enseignement supérieur au <span class="text-primary-500">Maroc</span>
+          </h1>
+          <p class="text-lg text-secondary-700 dark:text-secondary-300">
+            YuniGate vous accompagne à chaque étape de votre projet d'études au Maroc, de la préinscription jusqu'à votre intégration complète.
+          </p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 animate-fadeIn" style="animation-delay: 0.3s">
+          <a href="/contact" class="btn btn-primary">
+            Démarrer votre projet d'études
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="/services" class="btn btn-secondary">
+            Découvrir nos services
+          </a>
+        </div>
+
+        <div class="flex items-center gap-6 animate-fadeIn" style="animation-delay: 0.6s">
+          <div class="flex -space-x-2 overflow-hidden">
+            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-secondary-900" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Photo de profil" />
+            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-secondary-900" src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Photo de profil" />
+            <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-secondary-900" src="https://images.pexels.com/photos/6000065/pexels-photo-6000065.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Photo de profil" />
+          </div>
+          <div>
+            <p class="text-sm text-secondary-700 dark:text-secondary-300">
+              Rejoignez plus de <span class="font-semibold text-secondary-900 dark:text-white">500 étudiants</span> déjà accompagnés
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative lg:h-[500px] animate-float">
+        <img 
+          src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+          alt="Université au Maroc" 
+          class="rounded-2xl shadow-2xl object-cover w-full h-full z-10 relative"
+        />
+        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-500 rounded-2xl z-0 opacity-50 dark:opacity-30"></div>
+        <div class="absolute -top-6 -left-6 w-32 h-32 bg-secondary-900 rounded-2xl z-0 opacity-20 dark:opacity-30"></div>
+        
+        <!-- Floating stat card -->
+        <div class="absolute -bottom-10 -left-5 md:-left-10 bg-white dark:bg-secondary-800 p-4 rounded-lg shadow-lg z-20 animate-float" style="animation-delay: 1s">
+          <p class="text-sm text-secondary-600 dark:text-secondary-300">Universités partenaires</p>
+          <p class="text-2xl font-bold text-secondary-900 dark:text-white">10+</p>
+        </div>
+        
+        <!-- Floating stat card -->
+        <div class="absolute top-10 -right-5 md:-right-10 bg-white dark:bg-secondary-800 p-4 rounded-lg shadow-lg z-20 animate-float" style="animation-delay: 2s">
+          <p class="text-sm text-secondary-600 dark:text-secondary-300">Taux de satisfaction</p>
+          <p class="text-2xl font-bold text-secondary-900 dark:text-white">98%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

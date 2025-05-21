@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQs from '../components/faq/FAQs.astro';
+import CTASection from '../components/home/CTASection.astro';
+---
+
+<Layout 
+  title="FAQ" 
+  description="Trouvez des réponses à toutes vos questions sur les études au Maroc et les services de YuniGate."
+>
+  <section class="pt-32 pb-8 md:pt-40 md:pb-12 bg-gradient-to-b from-secondary-50 to-white dark:from-secondary-800 dark:to-secondary-900">
+    <div class="container mx-auto px-4 md:px-6 text-center max-w-4xl">
+      <h1 class="font-bold text-secondary-900 dark:text-white mb-6 animate-slideUp">
+        Questions <span class="text-primary-500">Fréquentes</span>
+      </h1>
+      <p class="text-lg text-secondary-700 dark:text-secondary-300 mb-8 animate-fadeIn">
+        Trouvez des réponses aux questions les plus courantes sur les études au Maroc et nos services d'accompagnement.
+      </p>
+    </div>
+  </section>
+  
+  <FAQs />
+  <CTASection />
+</Layout>

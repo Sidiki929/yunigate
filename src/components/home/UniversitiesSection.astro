@@ -1,0 +1,78 @@
+---
+const universities = [
+  {
+    name: "Université Internationale de Rabat",
+    logo: "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=600",
+    location: "Rabat"
+  },
+  {
+    name: "Université Internationale de Casablanca",
+    logo: "https://images.pexels.com/photos/159490/yale-university-landscape-universities-schools-159490.jpeg?auto=compress&cs=tinysrgb&w=600",
+    location: "Casablanca"
+  },
+  {
+    name: "Université Privée de Marrakech",
+    logo: "https://images.pexels.com/photos/159752/books-read-book-stack-literature-159752.jpeg?auto=compress&cs=tinysrgb&w=600",
+    location: "Marrakech"
+  },
+  {
+    name: "Université Mundiapolis",
+    logo: "https://images.pexels.com/photos/256520/pexels-photo-256520.jpeg?auto=compress&cs=tinysrgb&w=600",
+    location: "Casablanca"
+  },
+  {
+    name: "Université Euromed de Fès",
+    logo: "https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?auto=compress&cs=tinysrgb&w=600",
+    location: "Fès"
+  },
+  {
+    name: "Université Polytechnique Mohammed VI",
+    logo: "https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg?auto=compress&cs=tinysrgb&w=600",
+    location: "Ben Guerir"
+  }
+];
+---
+
+<section class="section bg-white dark:bg-secondary-900">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="text-secondary-900 dark:text-white">Universités <span class="text-primary-500">partenaires</span></h2>
+      <p>Nous collaborons avec les meilleures universités privées du Maroc pour vous offrir des opportunités d'études de qualité.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {universities.map((university) => (
+        <div class="card overflow-hidden hover-lift">
+          <div class="h-48 overflow-hidden">
+            <img src={university.logo} alt={university.name} class="w-full h-full object-cover transition-transform hover:scale-105" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg mb-2 text-secondary-900 dark:text-white">{university.name}</h3>
+            <div class="flex items-center text-secondary-600 dark:text-secondary-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              {university.location}
+            </div>
+            <a href="/universites" class="mt-4 inline-flex items-center text-sm text-primary-500 hover:text-primary-600 dark:text-primary-400">
+              En savoir plus
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <a href="/universites" class="btn btn-secondary">
+        Voir toutes nos universités partenaires
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

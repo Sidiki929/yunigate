@@ -1,0 +1,134 @@
+---
+const services = [
+  {
+    id: "inscription",
+    title: "Conseil et inscription universitaire",
+    description: "Nous vous aidons à choisir l'université et le programme qui correspondent le mieux à votre profil et à vos aspirations, puis nous vous accompagnons tout au long du processus d'inscription.",
+    features: [
+      "Évaluation de votre profil académique",
+      "Recommandation d'universités et de programmes",
+      "Préparation et soumission de votre dossier d'admission",
+      "Suivi de votre candidature jusqu'à l'acceptation",
+      "Assistance pour les paiements des frais d'études"
+    ],
+    image: "https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    id: "demarches",
+    title: "Démarches administratives",
+    description: "Nous prenons en charge les formalités administratives souvent complexes pour les étudiants internationaux, afin que vous puissiez vous concentrer sur vos études.",
+    features: [
+      "Assistance pour l'obtention du visa d'études",
+      "Préparation des documents nécessaires pour la carte de séjour",
+      "Accompagnement physique dans les administrations",
+      "Traduction et légalisation de documents",
+      "Constitution de dossiers conformes aux exigences locales"
+    ],
+    image: "https://images.pexels.com/photos/6457517/pexels-photo-6457517.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    id: "voyage",
+    title: "Organisation du voyage",
+    description: "Nous vous aidons à planifier votre voyage vers le Maroc dans les meilleures conditions et au meilleur prix.",
+    features: [
+      "Réservation de billets d'avion aux tarifs préférentiels",
+      "Conseils sur les bagages et documents de voyage",
+      "Information sur les procédures d'immigration",
+      "Organisation du transfert depuis l'aéroport",
+      "Accueil personnalisé dès votre arrivée"
+    ],
+    image: "https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    id: "logement",
+    title: "Recherche de logement",
+    description: "Nous vous proposons des solutions de logement adaptées à votre budget et à vos préférences, pour un séjour confortable pendant vos études.",
+    features: [
+      "Présentation des différentes options (studio, colocation, résidence)",
+      "Visites virtuelles ou physiques des logements",
+      "Négociation des loyers et des conditions",
+      "Vérification des contrats de location",
+      "Assistance pour l'installation (électricité, internet, etc.)"
+    ],
+    image: "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    id: "sejour",
+    title: "Carte de séjour",
+    description: "Nous vous guidons dans les démarches pour l'obtention et le renouvellement de votre carte de séjour marocaine, un document essentiel pour votre statut légal.",
+    features: [
+      "Préparation complète du dossier de demande",
+      "Accompagnement aux rendez-vous administratifs",
+      "Suivi de la procédure jusqu'à l'obtention de la carte",
+      "Assistance pour les renouvellements annuels",
+      "Conseils juridiques sur les droits des étudiants étrangers"
+    ],
+    image: "https://images.pexels.com/photos/4560083/pexels-photo-4560083.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    id: "suivi",
+    title: "Suivi et assistance continue",
+    description: "Notre engagement ne s'arrête pas à votre arrivée. Nous restons à vos côtés tout au long de votre parcours académique pour vous aider à réussir.",
+    features: [
+      "Assistance pour l'intégration universitaire",
+      "Conseils pour l'adaptation culturelle",
+      "Mise en relation avec d'autres étudiants",
+      "Support en cas de difficultés administratives ou personnelles",
+      "Orientation pour les opportunités professionnelles"
+    ],
+    image: "https://images.pexels.com/photos/5905480/pexels-photo-5905480.jpeg?auto=compress&cs=tinysrgb&w=600"
+  }
+];
+---
+
+<section id="services-details" class="py-16 md:py-24 bg-white dark:bg-secondary-900">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="section-title">
+      <h2 class="text-secondary-900 dark:text-white">Nos <span class="text-primary-500">services</span> en détail</h2>
+      <p>Découvrez comment YuniGate peut vous accompagner à chaque étape de votre parcours académique au Maroc.</p>
+    </div>
+    
+    <div class="space-y-24 mt-12">
+      {services.map((service, index) => (
+        <div id={service.id} class="scroll-mt-24">
+          <div class={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
+            <div class={`space-y-6 ${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
+              <h3 class="text-2xl font-bold text-secondary-900 dark:text-white">{service.title}</h3>
+              <p class="text-secondary-700 dark:text-secondary-300">{service.description}</p>
+              
+              <ul class="space-y-3">
+                {service.features.map(feature => (
+                  <li class="flex gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-secondary-700 dark:text-secondary-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class={`${index % 2 === 1 ? 'md:col-start-1' : ''}`}>
+              <div class="rounded-2xl overflow-hidden shadow-xl relative group hover-lift h-full">
+                <img src={service.image} alt={service.title} class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-secondary-900/80 to-transparent opacity-80 group-hover:opacity-70 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                  <h4 class="text-white font-bold text-xl mb-2">{service.title}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center">
+      <a href="/contact" class="btn btn-primary">
+        Parlez-nous de votre projet
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

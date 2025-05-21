@@ -1,0 +1,78 @@
+---
+const faqs = [
+  {
+    question: "Quels sont les frais de vos services d'accompagnement ?",
+    answer: "Nos tarifs varient en fonction du niveau d'accompagnement souhaité. Nous proposons différentes formules adaptées à tous les budgets. Contactez-nous pour obtenir un devis personnalisé en fonction de vos besoins spécifiques."
+  },
+  {
+    question: "Quels sont les documents nécessaires pour s'inscrire dans une université marocaine ?",
+    answer: "Les documents généralement requis sont : diplômes et relevés de notes légalisés, copie du passeport, extrait de naissance, photos d'identité et attestation de préinscription. La liste exacte peut varier selon l'établissement et le niveau d'études visé."
+  },
+  {
+    question: "Est-ce que je peux travailler pendant mes études au Maroc ?",
+    answer: "Les étudiants étrangers peuvent travailler au Maroc sous certaines conditions. Vous devez obtenir une autorisation de travail et respecter un nombre limité d'heures. Nous pouvons vous conseiller sur les démarches à suivre."
+  },
+  {
+    question: "Comment se passe la recherche de logement ?",
+    answer: "Nous vous aidons à trouver un logement adapté à votre budget et à vos préférences (studio, colocation, résidence universitaire). Nous organisons des visites virtuelles ou en personne et vous accompagnons dans les démarches administratives liées au logement."
+  },
+  {
+    question: "Quel est le coût de la vie pour un étudiant au Maroc ?",
+    answer: "Le coût de la vie pour un étudiant au Maroc varie entre 400€ et 700€ par mois, selon la ville et le mode de vie. Cela inclut le logement, la nourriture, les transports et les loisirs. Les villes comme Casablanca et Rabat sont généralement plus coûteuses."
+  },
+  {
+    question: "Combien de temps faut-il pour obtenir une carte de séjour étudiant ?",
+    answer: "Le délai d'obtention d'une carte de séjour étudiant au Maroc est généralement de 2 à 3 mois. Il est recommandé d'entamer les démarches dès l'arrivée. Notre équipe vous accompagne tout au long de ce processus pour en faciliter les étapes."
+  }
+];
+---
+
+<section class="section bg-white dark:bg-secondary-900">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="text-secondary-900 dark:text-white">Questions <span class="text-primary-500">fréquentes</span></h2>
+      <p>Vous avez des questions ? Nous avons des réponses. Voici les questions les plus couramment posées par nos étudiants.</p>
+    </div>
+    
+    <div class="max-w-3xl mx-auto" x-data="{ openIndex: null }">
+      {faqs.map((faq, index) => (
+        <div class="mb-4 border-b border-secondary-200 dark:border-secondary-700 pb-4">
+          <button
+            @click={`openIndex = openIndex === ${index} ? null : ${index}`}
+            class="w-full flex justify-between items-center text-left font-medium text-secondary-900 dark:text-white py-2"
+          >
+            <span>{faq.question}</span>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              class="h-5 w-5 text-primary-500 transform transition-transform"
+              x-bind:class={`openIndex === ${index} ? 'rotate-180' : ''`}
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div 
+            x-show={`openIndex === ${index}`} 
+            x-transition:enter="transition-all ease-out duration-300"
+            x-transition:enter-start="opacity-0 max-h-0"
+            x-transition:enter-end="opacity-100 max-h-96"
+            x-transition:leave="transition-all ease-in duration-200"
+            x-transition:leave-start="opacity-100 max-h-96"
+            x-transition:leave-end="opacity-0 max-h-0"
+            class="overflow-hidden text-secondary-700 dark:text-secondary-300 pt-2"
+          >
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <a href="/faq" class="btn btn-secondary">
+        Voir toutes les FAQ
+      </a>
+    </div>
+  </div>
+</section>

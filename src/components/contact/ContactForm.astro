@@ -1,0 +1,135 @@
+<div class="bg-white dark:bg-secondary-800 rounded-2xl shadow-lg p-8 animate-fadeIn">
+  <h2 class="text-2xl font-bold text-secondary-900 dark:text-white mb-6">Envoyez-nous un message</h2>
+  
+  <form x-data="{ 
+    formData: { 
+      name: '', 
+      email: '', 
+      phone: '',
+      country: '',
+      subject: '',
+      message: '' 
+    },
+    errors: {},
+    successMessage: '',
+    loading: false,
+    
+    validateForm() {
+      this.errors = {};
+      
+      if (!this.formData.name.trim()) this.errors.name = 'Le nom est requis';
+      if (!this.formData.email.trim()) this.errors.email = 'L\'email est requis';
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.formData.email)) this.errors.email = 'L\'email est invalide';
+      if (!this.formData.message.trim()) this.errors.message = 'Le message est requis';
+      
+      return Object.keys(this.errors).length === 0;
+    },
+    
+    submitForm() {
+      if (this.validateForm()) {
+        this.loading = true;
+        // Simulate form submission
+        setTimeout(() => {
+          this.loading = false;
+          this.successMessage = 'Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.';
+          this.formData = { name: '', email: '', phone: '', country: '', subject: '', message: '' };
+        }, 1500);
+      }
+    }
+  }" @submit.prevent="submitForm">
+    <!-- Success Message -->
+    <div 
+      x-show="successMessage" 
+      x-transition
+      class="mb-6 p-4 bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200 rounded-lg"
+    >
+      <p x-text="successMessage"></p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="form-control">
+        <label for="name" class="form-label">Nom complet *</label>
+        <input
+          type="text"
+          id="name"
+          x-model="formData.name"
+          class="form-input"
+          :class="errors.name ? 'border-error-500 focus:border-error-500 focus:ring-error-500' : ''"
+        />
+        <p x-show="errors.name" x-text="errors.name" class="text-error-500 text-sm mt-1"></p>
+      </div>
+      
+      <div class="form-control">
+        <label for="email" class="form-label">Email *</label>
+        <input
+          type="email"
+          id="email"
+          x-model="formData.email"
+          class="form-input"
+          :class="errors.email ? 'border-error-500 focus:border-error-500 focus:ring-error-500' : ''"
+        />
+        <p x-show="errors.email" x-text="errors.email" class="text-error-500 text-sm mt-1"></p>
+      </div>
+      
+      <div class="form-control">
+        <label for="phone" class="form-label">Téléphone</label>
+        <input
+          type="tel"
+          id="phone"
+          x-model="formData.phone"
+          class="form-input"
+        />
+      </div>
+      
+      <div class="form-control">
+        <label for="country" class="form-label">Pays d'origine</label>
+        <input
+          type="text"
+          id="country"
+          x-model="formData.country"
+          class="form-input"
+        />
+      </div>
+    </div>
+    
+    <div class="form-control">
+      <label for="subject" class="form-label">Sujet</label>
+      <select id="subject" x-model="formData.subject" class="form-input">
+        <option value="">Sélectionnez un sujet</option>
+        <option value="inscription">Inscription universitaire</option>
+        <option value="logement">Recherche de logement</option>
+        <option value="visa">Visa et formalités administratives</option>
+        <option value="autre">Autre demande</option>
+      </select>
+    </div>
+    
+    <div class="form-control">
+      <label for="message" class="form-label">Message *</label>
+      <textarea
+        id="message"
+        x-model="formData.message"
+        rows="5"
+        class="form-input"
+        :class="errors.message ? 'border-error-500 focus:border-error-500 focus:ring-error-500' : ''"
+      ></textarea>
+      <p x-show="errors.message" x-text="errors.message" class="text-error-500 text-sm mt-1"></p>
+    </div>
+    
+    <div class="mt-6">
+      <button
+        type="submit"
+        class="btn btn-primary w-full"
+        :disabled="loading"
+      >
+        <span x-show="!loading">Envoyer le message</span>
+        <span x-show="loading" class="flex items-center justify-center">
+          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Envoi en cours...
+        </span>
+      </button>
+    </div>
+  </form>
+</div>

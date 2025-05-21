@@ -1,0 +1,59 @@
+---
+const values = [
+  {
+    title: "Excellence",
+    description: "Nous nous engageons à offrir un service de la plus haute qualité à chaque étudiant que nous accompagnons.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+    </svg>`
+  },
+  {
+    title: "Intégrité",
+    description: "Nous agissons toujours avec honnêteté et transparence, en plaçant l'intérêt de l'étudiant au centre de nos préoccupations.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>`
+  },
+  {
+    title: "Empathie",
+    description: "Nous comprenons les défis émotionnels et pratiques liés à l'expatriation et nous y répondons avec bienveillance.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+    </svg>`
+  },
+  {
+    title: "Innovation",
+    description: "Nous cherchons constamment à améliorer nos services et à proposer des solutions créatives aux défis rencontrés par nos étudiants.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+    </svg>`
+  }
+];
+---
+
+<section class="py-16 md:py-24 bg-secondary-50 dark:bg-secondary-800">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="section-title">
+      <h2 class="text-secondary-900 dark:text-white">Nos <span class="text-primary-500">valeurs</span></h2>
+      <p>Les principes qui guident nos actions et notre engagement envers chaque étudiant.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      {values.map(value => (
+        <div class="card p-6 hover-lift" 
+             x-data="{ hover: false }"
+             x-on:mouseenter="hover = true" 
+             x-on:mouseleave="hover = false">
+          <div 
+            class="w-14 h-14 flex items-center justify-center rounded-full mb-5 text-primary-500 transition-colors"
+            x-bind:class="hover ? 'bg-primary-500 text-white' : 'bg-primary-100 dark:bg-primary-900/30'"
+          >
+            <Fragment set:html={value.icon} />
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-secondary-900 dark:text-white">{value.title}</h3>
+          <p class="text-secondary-700 dark:text-secondary-300">{value.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

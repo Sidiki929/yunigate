@@ -1,0 +1,43 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "YuniGate - Votre pont vers les universités privées marocaines. Accompagnement complet pour les étudiants africains." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-bind:class="{ 'dark': darkMode }">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title} | YuniGate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+      // Initialize dark mode from localStorage or system preference
+      if (localStorage.getItem('darkMode') === null) {
+        localStorage.setItem('darkMode', window.matchMedia('(prefers-color-scheme: dark)').matches.toString());
+      }
+    </script>
+  </head>
+  <body class="antialiased bg-white dark:bg-secondary-900 text-secondary-900 dark:text-white transition-colors duration-300">
+    <Header />
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
