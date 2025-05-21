@@ -1,5 +1,4 @@
 ---
-
 const services = [
   {
     title: "Conseil et inscription",
@@ -44,7 +43,7 @@ const services = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {services.map((service, index) => (
         <div class="card hover-lift p-6" 
-             x-data="{ hover: false }"
+             x-data="&lcub; hover: false &rcub;"
              x-on:mouseenter="hover = true" 
              x-on:mouseleave="hover = false">
           <div 
