@@ -1,35 +1,6 @@
 ---
- import photo1 from "../../assets/logo/brahim2.png"
- import photo2 from "../../assets/logo/profile1.png"
-const team = [
-  {
-    name: "Brahim Ouarahmane",
-    position: "Cofondateur & Directeur",
-    bio: "Professeur Vacataire dans l'une des plus grandes universités privées du Maroc, Brahim met à profit sa double expertise pédagogique et entrepreneuriale pour diriger Ma YuniGate avec exigence et vision. Il supervise les grandes orientations stratégiques de la structure, développe les partenariats avec les établissements d'enseignement supérieur et veille à la qualité de l'offre académique proposée aux étudiants.Son ancrage dans le milieu universitaire marocain constitue un atout majeur pour assurer la crédibilité et l’efficacité de notre accompagnement.",
-
-    photo:photo1.src
-  },
-  {
-    name: "Youssouf Traoré",
-    position:
-      "Cofondateur & Responsable du Développement Stratégique et Opérationnel",
-    bio: "Juriste spécialisé en droit des affaires, Youssouf assure le pilotage stratégique et opérationnel de Ma YuniGate, tout en garantissant la conformité juridique des activités. Fort de son propre parcours universitaire au sein d'une université privée marocaine, il met son expérience au service d'un accompagnement personnalisé et rigoureux pour chaque étudiant, de son pays d’origine jusqu’à son intégration au Maroc. Visionnaire et méthodique, il veille à l’efficacité globale du dispositif et à la qualité de chaque étape du processus",
-    photo: photo2.src,
-  },
-  {
-    name: "Oumar Traoré",
-    position: "Coordinateur Régional",
-    bio: "Diplômé en Ressources humaines et basé en Afrique de l’Ouest, Oumar est un relais essentiel entre le terrain et l’équipe centrale. Grâce à son expertise en gestion des relations humaines, il encadre et motive le réseau des correspondants locaux, tout en veillant à la qualité des dossiers transmis. Il joue également un rôle déterminant dans le dialogue avec les étudiants et leurs familles, assurant un accompagnement humain, structuré et efficace. Sa rigueur et sa proximité en font un pilier du processus d’intégration et de réussite.",
-    photo:  "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png",
-  },
-  {
-    name: "Adam Camara",
-    position: "Responsable Marketing & Commercial",
-    bio: "Spécialiste de la communication et du développement commercial, Adam conçoit et déploie les campagnes de sensibilisation dans les pays partenaires. Elle travaille à faire connaître Ma YuniGate auprès des étudiants, lycées, parents et partenaires éducatifs. Grâce à son dynamisme, elle positionne le Maroc comme une destination de choix dans l’esprit des jeunes Africains.",
-
-    photo:  "https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png",
-  },
-];
+import photo1 from "../../assets/logo/brahim2.png"
+import photo2 from "../../assets/logo/profile1.png"
 ---
 
 <section class="py-16 md:py-24 bg-white dark:bg-secondary-900">
@@ -45,34 +16,109 @@ const team = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-      {
-        team.map((member) => (
-          <div class="card overflow-hidden hover-lift">
-            <div class="h-64 overflow-hidden">
-              <img
-                src={member.photo}
-                alt={member.name}
-                class="w-full  transition-transform duration-500 "
-                onError={(e) => {
-                  e.target.src =
-                    "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600";
-                }}
-              />
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-secondary-900 dark:text-white mb-1">
-                {member.name}
-              </h3>
-              <p class="text-primary-500 font-medium text-sm mb-4">
-                {member.position}
-              </p>
-              <p class="text-secondary-700 dark:text-secondary-300 text-sm">
-                {member.bio}
-              </p>
-            </div>
-          </div>
-        ))
-      }
+      <!-- Brahim Ouarahmane -->
+      <div class="card overflow-hidden hover-lift">
+        <div class="h-auto overflow-hidden">
+          <img
+            src={photo1.src}
+            alt="Brahim Ouarahmane"
+            class="w-full h-[50%] transition-transform duration-500"
+            onError={(e) => {
+              e.target.src =
+                "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600";
+            }}
+          />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-secondary-900 dark:text-white mb-1">
+            Brahim Ouarahmane
+          </h3>
+          <p class="text-primary-500 font-medium text-sm mb-4">
+            Cofondateur & Directeur
+          </p>
+          <p class="text-secondary-700 dark:text-secondary-300 text-sm">
+            Professeur Vacataire dans l'une des plus grandes universités privées du Maroc, Brahim met à profit sa double expertise pédagogique et entrepreneuriale pour diriger Ma YuniGate avec exigence et vision. Il supervise les grandes orientations stratégiques de la structure, développe les partenariats avec les établissements d'enseignement supérieur et veille à la qualité de l'offre académique proposée aux étudiants.Son ancrage dans le milieu universitaire marocain constitue un atout majeur pour assurer la crédibilité et l'efficacité de notre accompagnement.
+          </p>
+        </div>
+      </div>
+
+      <!-- Youssouf Traoré -->
+      <div class="card overflow-hidden hover-lift">
+        <div class="h-64 overflow-hidden">
+          <img
+            src={photo2.src}
+            alt="Youssouf Traoré"
+            class="w-full h-auto transition-transform duration-500"
+            onError={(e) => {
+              e.target.src =
+                "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600";
+            }}
+          />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-secondary-900 dark:text-white mb-1">
+            Youssouf Traoré
+          </h3>
+          <p class="text-primary-500 font-medium text-sm mb-4">
+            Cofondateur & Responsable du Développement Stratégique et Opérationnel
+          </p>
+          <p class="text-secondary-700 dark:text-secondary-300 text-sm">
+            Juriste spécialisé en droit des affaires, Youssouf assure le pilotage stratégique et opérationnel de Ma YuniGate, tout en garantissant la conformité juridique des activités. Fort de son propre parcours universitaire au sein d'une université privée marocaine, il met son expérience au service d'un accompagnement personnalisé et rigoureux pour chaque étudiant, de son pays d'origine jusqu'à son intégration au Maroc. Visionnaire et méthodique, il veille à l'efficacité globale du dispositif et à la qualité de chaque étape du processus
+          </p>
+        </div>
+      </div>
+
+      <!-- Oumar Traoré -->
+      <div class="card overflow-hidden hover-lift">
+        <div class="h-64 overflow-hidden">
+          <img
+            src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png"
+            alt="Oumar Traoré"
+            class="w-full h-auto transition-transform duration-500"
+            onError={(e) => {
+              e.target.src =
+                "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600";
+            }}
+          />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-secondary-900 dark:text-white mb-1">
+            Oumar Traoré
+          </h3>
+          <p class="text-primary-500 font-medium text-sm mb-4">
+            Coordinateur Régional
+          </p>
+          <p class="text-secondary-700 dark:text-secondary-300 text-sm">
+            Diplômé en Ressources humaines et basé en Afrique de l'Ouest, Oumar est un relais essentiel entre le terrain et l'équipe centrale. Grâce à son expertise en gestion des relations humaines, il encadre et motive le réseau des correspondants locaux, tout en veillant à la qualité des dossiers transmis. Il joue également un rôle déterminant dans le dialogue avec les étudiants et leurs familles, assurant un accompagnement humain, structuré et efficace. Sa rigueur et sa proximité en font un pilier du processus d'intégration et de réussite.
+          </p>
+        </div>
+      </div>
+
+      <!-- Adam Camara -->
+      <div class="card overflow-hidden hover-lift">
+        <div class="h-64 overflow-hidden">
+          <img
+            src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png"
+            alt="Adam Camara"
+            class="w-full h-auto transition-transform duration-500"
+            onError={(e) => {
+              e.target.src =
+                "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600";
+            }}
+          />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-secondary-900 dark:text-white mb-1">
+            Adam Camara
+          </h3>
+          <p class="text-primary-500 font-medium text-sm mb-4">
+            Responsable Marketing & Commercial
+          </p>
+          <p class="text-secondary-700 dark:text-secondary-300 text-sm">
+            Spécialiste de la communication et du développement commercial, Adam conçoit et déploie les campagnes de sensibilisation dans les pays partenaires. Elle travaille à faire connaître Ma YuniGate auprès des étudiants, lycées, parents et partenaires éducatifs. Grâce à son dynamisme, elle positionne le Maroc comme une destination de choix dans l'esprit des jeunes Africains.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
