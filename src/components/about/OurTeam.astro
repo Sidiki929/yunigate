@@ -1,6 +1,7 @@
 ---
 import photo1 from "../../assets/logo/brahim.jpeg"
 import photo2 from "../../assets/logo/profile1.png"
+import oumar  from "../../assets/logo/oumar.png"
 ---
 
 <section class="py-16 md:py-24 bg-white dark:bg-secondary-900">
@@ -73,7 +74,7 @@ import photo2 from "../../assets/logo/profile1.png"
         <div class="h-80 overflow-hidden">
           <img
             src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png"
-            alt="Oumar Traoré"
+            alt={oumar.src}
             class="w-full  h-auto object-cover transition-transform duration-500"
             onError={(e) => {
               e.target.src =
