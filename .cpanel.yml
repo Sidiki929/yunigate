@@ -1,0 +1,39 @@
+---
+deployment:
+  tasks:
+    # Installer les dépendances Node.js
+    - export NODEJS_VERSION=22
+    - export PATH=/opt/alt/alt-nodejs${NODEJS_VERSION}/root/usr/bin:$PATH
+    - npm --version
+    - node --version
+    
+    # Installer les dépendances du projet
+    - npm install
+    
+    # Builder le projet Astro (génère le dossier dist/)
+    - npm run build
+    
+    # Définir le chemin de déploiement
+    - export DEPLOYPATH=/home/yunigate/public_html/
+    
+    # Nettoyer le dossier de destination d'abord
+    - /bin/rm -rf $DEPLOYPATH/*
+    
+    # Copier uniquement le contenu du dossier dist/ vers public_html
+    - /bin/cp -R dist/* $DEPLOYPATH
+    
+    # Définir les permissions correctes pour les dossiers
+    - /bin/find $DEPLOYPATH -type d -exec chmod 755 {} \;
+    
+    # Définir les permissions correctes pour tous les fichiers
+    - /bin/find $DEPLOYPATH -type f -exec chmod 644 {} \;
+    
+    # S'assurer que index.html a les bonnes permissions
+    - /bin/chmod 644 $DEPLOYPATH/index.html
+    
+    # Permissions pour le dossier principal
+    - /bin/chmod 755 $DEPLOYPATH
+    
+    # Nettoyer les fichiers temporaires
+    - /bin/rm -rf node_modules
+    - /bin/rm -rf dist
