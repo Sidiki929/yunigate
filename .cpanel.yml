@@ -4,23 +4,32 @@ deployment:
     # Installer les dépendances Node.js
     - export NODEJS_VERSION=22
     - export PATH=/opt/alt/alt-nodejs${NODEJS_VERSION}/root/usr/bin:$PATH
-    - npm --version
-    - node --version
     
     # Installer les dépendances du projet
     - npm install
     
-    # Builder le projet Astro (génère le dossier dist/)
+    # Builder le projet Astro
     - npm run build
     
     # Définir le chemin de déploiement
     - export DEPLOYPATH=/home/yunigate/public_html/
     
-    # Nettoyer le dossier de destination d'abord
-    - /bin/rm -rf $DEPLOYPATH/*
+    # Nettoyer d'abord (garder seulement .cpanel.yml)
+    - /bin/find $DEPLOYPATH -type f ! -name '.cpanel.yml' -delete
+    - /bin/find $DEPLOYPATH -type d -empty -delete
     
-    # Copier uniquement le contenu du dossier dist/ vers public_html
+    # Copier TOUT le contenu de dist/
     - /bin/cp -R dist/* $DEPLOYPATH
+    
+    # Vérifier que les fichiers CSS existent
+    - /bin/ls -la $DEPLOYPATH/_astro/
+    
+    # Permissions
+    - /bin/find $DEPLOYPATH -type d -exec chmod 755 {} \;
+    - /bin/find $DEPLOYPATH -type f -exec chmod 644 {} \;
+    
+    # Nettoyer
+    - /bin/rm -rf node_modules dist
     
     # Définir les permissions correctes pour les dossiers
     - /bin/find $DEPLOYPATH -type d -exec chmod 755 {} \;
