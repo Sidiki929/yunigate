@@ -2,7 +2,7 @@
 deployment:
   tasks:
     # Définir le chemin de déploiement
-    - export DEPLOYPATH=/home/username/public_html/
+    - export DEPLOYPATH=/home/yunigate/public_html/
     
     # Copier uniquement le contenu du dossier dist/ (pré-buildé)
     - /bin/cp -R dist/* $DEPLOYPATH
