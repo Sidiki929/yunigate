@@ -15,8 +15,8 @@ deployment:
     - export DEPLOYPATH=/home/yunigate/public_html/
     
     # Nettoyer d'abord (garder seulement .cpanel.yml)
-    - /bin/find $DEPLOYPATH -type f ! -name '.cpanel.yml' -delete
-    - /bin/find $DEPLOYPATH -type d -empty -delete
+    #- /bin/find $DEPLOYPATH -type f ! -name '.cpanel.yml' -delete
+    #- /bin/find $DEPLOYPATH -type d -empty -delete
     
     # Copier TOUT le contenu de dist/
     - /bin/cp -R dist/* $DEPLOYPATH
