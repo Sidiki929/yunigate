@@ -16,6 +16,9 @@ deployment:
     # Définir le chemin de déploiement
     - export DEPLOYPATH=/home/yunigate/public_html/
     
+    # Nettoyer le dossier de destination d'abord
+    - /bin/rm -rf $DEPLOYPATH/*
+    
     # Copier uniquement le contenu du dossier dist/ vers public_html
     - /bin/cp -R dist/* $DEPLOYPATH
     
